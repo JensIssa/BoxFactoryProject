@@ -12,12 +12,14 @@ public class BoxService : IBoxService
     private readonly IBoxRepository _repository;
     private readonly IMapper _mapper;
     private readonly IValidator<PostBoxDTO> _postValidator;
+    private readonly IValidator<Box> _boxValidator;
 
-    public BoxService(IBoxRepository repository, IMapper mapper, IValidator<PostBoxDTO> postValidator)
+    public BoxService(IBoxRepository repository, IMapper mapper, IValidator<PostBoxDTO> postValidator, IValidator<Box> boxValidator)
     {
         _repository = repository;
         _mapper = mapper;
         _postValidator = postValidator;
+        _boxValidator = boxValidator;
     }
 
     public List<Box> GetAllBoxes()
@@ -51,7 +53,7 @@ public class BoxService : IBoxService
         {
             throw new ValidationException("ID in body and route are different");
         }
-        var validation = _postValidator.Validate(box);
+        var validation = _boxValidator.Validate(box);
         if (!validation.IsValid)
         {
             throw new ValidationException(validation.ToString());
