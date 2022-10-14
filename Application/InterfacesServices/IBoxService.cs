@@ -5,7 +5,7 @@ namespace Application.InterfacesServices;
 
 public interface IBoxService
 {
-    List<Box> GetAllBoxex();
+    List<Box> GetAllBoxes();
     Box CreateBox(PostBoxDTO boxDto);
     Box GetBoxById(int id);
     Box DeleteBox(int id);
