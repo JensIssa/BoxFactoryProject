@@ -1,6 +1,13 @@
-﻿namespace Application.DependencyResolver;
+﻿using Application.InterfacesServices;
+using Application.Services;
+using Microsoft.Extensions.DependencyInjection;
 
-public class DepedencyResolverService
+namespace Application.DependencyResolver;
+
+public static class DepedencyResolverService
 {
-    
+    public static void RegisterApplicationLayer(IServiceCollection services)
+    {
+        services.AddScoped<IBoxService, BoxService>();
+    }
 }
