@@ -31,5 +31,17 @@ public class PostBoxDTO
         get;
         set;
     }
+
+    public string imageUrl
+    {
+        get;
+        set;
+    }
+
+    public string description
+    {
+        get;
+        set;
+    }
     
 }
