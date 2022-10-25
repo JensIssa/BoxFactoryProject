@@ -2,7 +2,6 @@
 
 public class PostBoxDTO
 {
-
     public string BoxName
     {
         get;

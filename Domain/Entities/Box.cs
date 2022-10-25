@@ -2,46 +2,45 @@
 
 public class Box
 {
-    private int id;
-    private string boxName;
-    private double heigth;
-    private double length;
-    private double width;
-    private string imageUrl;
-    private string description;
-    
     public int Id
     {
-        get => id;
+        get;
+        set;
     }
 
     public string BoxName
     {
-        get => boxName;
+        get;
+        set;
     }
 
     public double Heigth
     {
-        get => heigth;
+        get;
+        set;
     }
 
     public double Length
     {
-        get => length;
+        get;
+        set;
     }
 
     public double Width
     {
-        get => width;
+        get;
+        set;
     }
 
     public string ImageUrl
     {
-        get => imageUrl;
+        get;
+        set;
     }
 
     public string Description
     {
-        get => description;
+        get;
+        set;
     }
 }
