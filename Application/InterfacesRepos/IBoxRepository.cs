@@ -9,4 +9,5 @@ public interface IBoxRepository
     Box CreateBox(Box box);
     Box UpdateBox(Box box);
     Box DeleteBox(int id);
+    public void RebuildDb();
 }

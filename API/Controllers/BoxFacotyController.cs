@@ -2,6 +2,7 @@ using Application.DTOs;
 using Application.InterfacesServices;
 using Domain.Entities;
 using FluentValidation;
+using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -24,12 +25,11 @@ public class BoxFactoryController : ControllerBase
     }
 
     [HttpPost]
-    [Route("")]
-    public ActionResult CreateBox(PostBoxDTO postBoxDto)
+    public ActionResult<Box> CreateBox(PostBoxDTO postBoxDto)
     {
         try
         {
-            var result = service.CreateBox(postBoxDto);
+            Box result = service.CreateBox(postBoxDto);
             return Created("Box" + result.Id, result);
         }
         catch (ValidationException v)
@@ -40,5 +40,12 @@ public class BoxFactoryController : ControllerBase
         {
             return StatusCode(500, e.Message);
         }
+    }
+
+    [HttpGet]
+    [Route("CreateDB")]
+    public void CreateDB()
+    {
+        service.RebuildDB();
     }
 }

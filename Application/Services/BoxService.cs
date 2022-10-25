@@ -22,6 +22,11 @@ public class BoxService : IBoxService
         _boxValidator = boxValidator;
     }
 
+    public void RebuildDB()
+    {
+        _repository.RebuildDb();
+    }
+
     public List<Box> GetAllBoxes()
     {
         return _repository.GetAllBoxes();

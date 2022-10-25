@@ -38,9 +38,15 @@ public class BoxRepository: IBoxRepository
 
     public Box DeleteBox(int id)
     {
-        var boxToDelete = _repositoryDbContext.BoxTable.Find(id) ?? throw new KeyNotFoundException("Id to delete not found");
+         var boxToDelete = _repositoryDbContext.BoxTable.Find(id) ?? throw new KeyNotFoundException("Id to delete not found");
         _repositoryDbContext.BoxTable.Remove(boxToDelete);
         _repositoryDbContext.SaveChanges();
         return boxToDelete;
+    }
+
+    public void RebuildDb()
+    {
+        _repositoryDbContext.Database.EnsureDeleted();
+        _repositoryDbContext.Database.EnsureCreated();
     }
 }

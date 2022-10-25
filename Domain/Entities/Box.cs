@@ -7,19 +7,9 @@ public class Box
     private double heigth;
     private double length;
     private double width;
-    private string description;
     private string imageUrl;
+    private string description;
     
-    public Box(int id, string boxName, double heigth, double length, double width, string description, string imageUrl)
-    {
-        this.id = id;
-        this.boxName = boxName;
-        this.heigth = heigth;
-        this.length = length;
-        this.width = width;
-        this.description = description;
-        this.imageUrl = imageUrl;
-    }
     public int Id
     {
         get => id;
@@ -45,13 +35,13 @@ public class Box
         get => width;
     }
 
-    public string Description
-    {
-        get => description;
-    }
-
     public string ImageUrl
     {
         get => imageUrl;
+    }
+
+    public string Description
+    {
+        get => description;
     }
 }

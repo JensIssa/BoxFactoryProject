@@ -8,6 +8,10 @@ public class Manager
     private string username;
     private string password;
 
+    public Manager()
+    {
+        
+    }
     public Manager(int id, string firstName, string lastName, string username, string password)
     {
         this.id = id;

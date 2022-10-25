@@ -5,6 +5,7 @@ namespace Application.InterfacesServices;
 
 public interface IBoxService
 {
+    public void RebuildDB();
     List<Box> GetAllBoxes();
     Box CreateBox(PostBoxDTO boxDto);
     Box GetBoxById(int id);

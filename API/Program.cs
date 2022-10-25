@@ -1,4 +1,6 @@
+using System.Text.Json.Serialization;
 using Application.DTOs;
+using Application.InterfacesRepos;
 using Application.InterfacesServices;
 using Application.Services;
 using AutoMapper;
@@ -10,26 +12,23 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
-
-
-
 // Add services to the container.
-var config = new MapperConfiguration(conf =>
+var mapper = new MapperConfiguration(config =>
 {
-    conf.CreateMap<PostBoxDTO, Box>();
-});
-
-var mapper = config.CreateMapper();
+    config.CreateMap<PostBoxDTO, Box>();
+}).CreateMapper();
 builder.Services.AddSingleton(mapper);
 
-builder.Services.AddDbContext<RepositoryDBContext>(options => options.UseSqlite("Data Source =../Infrastructure/db.db"));
+
+builder.Services.AddDbContext<RepositoryDBContext>(options => options.UseSqlite("Data Source =db.db"));
 builder.Services.AddScoped<RepositoryDBContext>();
-builder.Services.AddScoped<BoxRepository>();
+builder.Services.AddScoped<IBoxRepository, BoxRepository>();
+builder.Services.AddScoped<IBoxService, BoxService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 Application.DependencyResolver.
     DepedencyResolverService.

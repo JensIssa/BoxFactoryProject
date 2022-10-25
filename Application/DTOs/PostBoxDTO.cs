@@ -2,43 +2,38 @@
 
 public class PostBoxDTO
 {
-    public int id
+
+    public string BoxName
     {
         get;
         set;
     }
 
-    public string boxName
+    public double Heigth
     {
         get;
         set;
     }
 
-    public double heigth
+    public double Length
+    {
+        get;
+        set;
+    }
+    
+    public double Width
     {
         get;
         set;
     }
 
-    public double width
+    public string ImageUrl
     {
         get;
         set;
     }
 
-    public double length
-    {
-        get;
-        set;
-    }
-
-    public string imageUrl
-    {
-        get;
-        set;
-    }
-
-    public string description
+    public string Description
     {
         get;
         set;
