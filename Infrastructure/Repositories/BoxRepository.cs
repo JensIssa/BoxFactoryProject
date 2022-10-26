@@ -29,11 +29,21 @@ public class BoxRepository: IBoxRepository
         return box;
     }
 
-    public Box UpdateBox(Box box)
+    public Box UpdateBox(Box box, int id)
     {
-        _repositoryDbContext.BoxTable.Update(box);
-        _repositoryDbContext.SaveChanges();
-        return box;
+        var b = _repositoryDbContext.BoxTable.FirstOrDefault(b => b.Id == id);
+        if (b.Id == id)
+        {
+            b.BoxName = box.BoxName;
+            b.Description = box.Description;
+            b.Heigth = box.Heigth;
+            b.Length = box.Length;
+            b.Width = box.Width;
+            b.ImageUrl = box.ImageUrl;
+            _repositoryDbContext.BoxTable.Update(box);
+            _repositoryDbContext.SaveChanges();
+        }
+        return b;
     }
 
     public Box DeleteBox(int id)

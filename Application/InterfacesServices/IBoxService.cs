@@ -10,5 +10,5 @@ public interface IBoxService
     Box CreateBox(PostBoxDTO boxDto);
     Box GetBoxById(int id);
     Box DeleteBox(int id);
-    Box UpdateBox(int id, Box box);
+    Box UpdateBox(int id, PutBoxDTO box);
 }

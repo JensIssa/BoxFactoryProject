@@ -48,4 +48,58 @@ public class BoxFactoryController : ControllerBase
     {
         service.RebuildDB();
     }
+
+    [HttpGet]
+    [Route("id")]
+    public ActionResult<Box> GetBoxById(int id)
+    {
+        try
+        {
+            return service.GetBoxById(id);
+        }
+        catch (KeyNotFoundException k)
+        {
+            return NotFound("No box has been found " + id);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(500, e.ToString());
+        }
+    }
+
+    [HttpDelete]
+    [Route("id")]
+    public ActionResult<Box> DeleteBox(int id)
+    {
+        try
+        {
+            return Ok(service.DeleteBox(id));
+        }
+        catch (KeyNotFoundException k)
+        {
+            return NotFound("No box has been found " + id);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(500, e.ToString());
+        }
+    }
+
+    [HttpPut]
+    [Route("{id}")]
+    public ActionResult<Box> UpdateBox( int id, PutBoxDTO box)
+    {
+        try
+        {
+            return Ok(service.UpdateBox(id, box));
+        }
+        catch (KeyNotFoundException k)
+        {
+            return NotFound("No box has been found " + id);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(500, e.ToString());
+        }
+    }
 }

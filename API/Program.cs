@@ -21,6 +21,7 @@ builder.Services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssembli
 var mapper = new MapperConfiguration(config =>
 {
     config.CreateMap<PostBoxDTO, Box>();
+    config.CreateMap<PutBoxDTO, Box>();
 }).CreateMapper();
 builder.Services.AddSingleton(mapper);
 

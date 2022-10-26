@@ -12,9 +12,9 @@ public class BoxService : IBoxService
     private readonly IBoxRepository _repository;
     private readonly IMapper _mapper;
     private readonly IValidator<PostBoxDTO> _postValidator;
-    private readonly IValidator<Box> _boxValidator;
+    private readonly IValidator<PutBoxDTO> _boxValidator;
 
-    public BoxService(IBoxRepository repository, IMapper mapper, IValidator<PostBoxDTO> postValidator, IValidator<Box> boxValidator)
+    public BoxService(IBoxRepository repository, IMapper mapper, IValidator<PostBoxDTO> postValidator, IValidator<PutBoxDTO> boxValidator)
     {
         _repository = repository;
         _mapper = mapper;
@@ -52,7 +52,7 @@ public class BoxService : IBoxService
         return _repository.DeleteBox(id);
     }
 
-    public Box UpdateBox(int id, Box box)
+    public Box UpdateBox(int id, PutBoxDTO box)
     {
         if (id != box.Id)
         {
@@ -63,7 +63,6 @@ public class BoxService : IBoxService
         {
             throw new ValidationException(validation.ToString());
         }
-
-        return _repository.UpdateBox(box);
+        return _repository.UpdateBox(_mapper.Map<Box>(box), id);
     }
 }
