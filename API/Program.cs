@@ -48,7 +48,7 @@ if (app.Environment.IsDevelopment())
     {
         options.AllowAnyMethod();
         options.AllowAnyOrigin();
-        options.AllowAnyMethod();
+        options.AllowAnyHeader();
     });
 }
 
