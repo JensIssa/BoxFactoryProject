@@ -31,19 +31,9 @@ public class BoxRepository: IBoxRepository
 
     public Box UpdateBox(Box box, int id)
     {
-        var b = _repositoryDbContext.BoxTable.FirstOrDefault(b => b.Id == id);
-        if (b.Id == id)
-        {
-            b.BoxName = box.BoxName;
-            b.Description = box.Description;
-            b.Heigth = box.Heigth;
-            b.Length = box.Length;
-            b.Width = box.Width;
-            b.ImageUrl = box.ImageUrl;
-            _repositoryDbContext.BoxTable.Update(box);
+        _repositoryDbContext.BoxTable.Update(box);
             _repositoryDbContext.SaveChanges();
-        }
-        return b;
+            return box;
     }
 
     public Box DeleteBox(int id)

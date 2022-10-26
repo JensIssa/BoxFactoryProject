@@ -68,7 +68,7 @@ public class BoxFactoryController : ControllerBase
     }
 
     [HttpDelete]
-    [Route("id")]
+    [Route("{id}")]
     public ActionResult<Box> DeleteBox(int id)
     {
         try
@@ -86,8 +86,8 @@ public class BoxFactoryController : ControllerBase
     }
 
     [HttpPut]
-    [Route("{id}")]
-    public ActionResult<Box> UpdateBox( int id, PutBoxDTO box)
+    [Route("Edit/{id}")]
+    public ActionResult<Box> UpdateBox( [FromRoute]int id, [FromBody]PutBoxDTO box)
     {
         try
         {
