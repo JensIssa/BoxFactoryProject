@@ -17,12 +17,6 @@ public class Manager
         set;
     }
 
-    public string Password
-    {
-        get;
-        set;
-    }
-
     public string Hash
     {
         get; 
