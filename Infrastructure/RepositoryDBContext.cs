@@ -12,7 +12,8 @@ public class RepositoryDBContext: Microsoft.EntityFrameworkCore.DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Box>().Property(f => f.Id).ValueGeneratedOnAdd();
-        //  modelBuilder.Entity<Manager>().Property(f => f.Id).ValueGeneratedOnAdd();
+        modelBuilder.Entity<Manager>().Property(m => m.Id).ValueGeneratedOnAdd();
+        modelBuilder.Entity<Manager>().HasIndex(m => m.Username).IsUnique();
     }
 
     public DbSet<Box> BoxTable
@@ -20,11 +21,11 @@ public class RepositoryDBContext: Microsoft.EntityFrameworkCore.DbContext
         get;
         set;
     }
-/**
+    
     public DbSet<Manager> ManagerTable
     {
         get;
         set;
     }
-    */
+    
 }

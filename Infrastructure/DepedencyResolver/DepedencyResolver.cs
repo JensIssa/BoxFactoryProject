@@ -8,7 +8,7 @@ public class DepedencyResolver
 {
     public static void RegisterInfrastructure(IServiceCollection services)
     {
+        services.AddScoped<IManagerRepository, ManagerRepository>();
         services.AddScoped<IBoxRepository, BoxRepository>();
-        
     }
 }

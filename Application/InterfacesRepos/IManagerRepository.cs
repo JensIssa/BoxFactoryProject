@@ -4,5 +4,6 @@ namespace Application.InterfacesRepos;
 
 public interface IManagerRepository
 {
-    Manager login(string username, string password);
+    public Manager GetManagerByUsername(string username);
+    public Manager CreateNewManager(Manager manager);
 }

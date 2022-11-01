@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using Application.DTOs;
+using Application.Helpers;
 using Application.InterfacesRepos;
 using Application.InterfacesServices;
 using Application.Services;
@@ -26,10 +27,15 @@ var mapper = new MapperConfiguration(config =>
 builder.Services.AddSingleton(mapper);
 
 
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+
 builder.Services.AddDbContext<RepositoryDBContext>(options => options.UseSqlite("Data Source =db.db"));
 builder.Services.AddScoped<RepositoryDBContext>();
 builder.Services.AddScoped<IBoxRepository, BoxRepository>();
 builder.Services.AddScoped<IBoxService, BoxService>();
+
+builder.Services.AddScoped<IAuthService, AuthService>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 Application.DependencyResolver.
     DepedencyResolverService.
@@ -44,15 +50,16 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseCors(options =>
-    {
-        options.AllowAnyMethod();
-        options.AllowAnyOrigin();
-        options.AllowAnyHeader();
-    });
+   
 }
 
-app.UseHttpsRedirection();
+app.UseCors(options =>
+{
+    options.SetIsOriginAllowed(origin => true)
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials();
+});
 
 app.UseAuthorization();
 
