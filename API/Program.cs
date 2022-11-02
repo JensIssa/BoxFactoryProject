@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.Json.Serialization;
 using Application.DTOs;
 using Application.Helpers;
@@ -9,7 +10,9 @@ using Domain.Entities;
 using FluentValidation;
 using Infrastructure;
 using Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +38,17 @@ builder.Services.AddScoped<IBoxRepository, BoxRepository>();
 builder.Services.AddScoped<IBoxService, BoxService>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateAudience = false,
+        ValidateIssuer = false,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+            builder.Configuration.GetValue<string>("AppSettings:Secret")))
+    };
+});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 Application.DependencyResolver.
@@ -60,6 +74,8 @@ app.UseCors(options =>
         .AllowAnyHeader()
         .AllowCredentials();
 });
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

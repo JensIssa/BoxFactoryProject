@@ -3,10 +3,12 @@ using Application.InterfacesServices;
 using Domain.Entities;
 using FluentValidation;
 using Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("[controller]")]
 public class BoxFactoryController : ControllerBase
