@@ -1,0 +1,28 @@
+.form-control {
+  border-radius: 3px;
+  width: 600px;
+  margin-left: 20px;
+}
+
+.search-icon{
+  z-index: 10;
+  left: 42.5%;
+  top: 20px;
+  color: blue;
+  position: absolute;
+}
+
+.navbar {
+  background-color: rgba(110, 47, 4, 0.96) !important;
+}
+
+.navbar .navbar-brand {
+  color : #FFF;
+}
+
+.fa-search{
+  color: rgba(0, 0, 0, 0.96) !important;
+}
+
+
+

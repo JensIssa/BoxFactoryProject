@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <form class="form-signin">
+    <h2 class="form-signin-heading">Please login here</h2>
+    <input [(ngModel)]="username" type="text" class="form-control" placeholder="Username" required="" autofocus="" [ngModelOptions]="{standalone: true}"/>
+    <br>
+    <input [(ngModel)]="password" type="password" class="form-control" placeholder="Password" required=""[ngModelOptions]="{standalone: true}"/>
+    <button class="btn btn-lg btn-primary btn-block" (click)="login()">Login</button>
+  </form>
+</div>

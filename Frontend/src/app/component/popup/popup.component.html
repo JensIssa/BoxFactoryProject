@@ -1,0 +1,42 @@
+
+<form>
+  <mat-form-field>
+    <mat-label>Box name</mat-label>
+    <input matInput placeholder="Boxname" id="boxLabel" type="string" [(ngModel)]="boxName" value="{{boxName}}" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+</form>
+<form>
+  <mat-form-field>
+    <mat-label>Height</mat-label>
+    <input matInput placeholder="Height" type="number" [(ngModel)]="heigth" value="{{heigth}}" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+</form>
+<form>
+  <mat-form-field>
+    <mat-label>Length</mat-label>
+    <input matInput placeholder="Length" type="number" [(ngModel)]="length" value="{{length}}" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+</form>
+<form>
+  <mat-form-field>
+    <mat-label>Width</mat-label>
+    <input matInput placeholder="Width" type="number" [(ngModel)]="width" value="{{width}}" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+</form>
+<form>
+  <mat-form-field>
+    <mat-label>Imageurl</mat-label>
+    <input matInput placeholder="ImageUrl" type="string" [(ngModel)]="imageUrl" value="{{imageUrl}}" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+</form>
+<form>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="Description" type="string" [(ngModel)]="description" value="{{description}}" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+</form>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button"(click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary"(click)="updateBox()">Save</button>
+</mat-dialog-actions>

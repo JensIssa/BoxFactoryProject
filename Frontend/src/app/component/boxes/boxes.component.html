@@ -1,0 +1,19 @@
+
+<div class="container">
+  <button class="fa fa-plus btnCreate" [routerLink]="'/creations'">Create box </button>
+    <div class="row">
+      <ng-container *ngFor="let item of boxList">
+        <div class="card col-md-3">
+          <img src="{{item.imageUrl}}" alt="">
+          <p><strong>Name:</strong> {{item.boxName}}</p>
+          <p><strong>Length(meters):</strong> {{item.length}}</p>
+          <p><strong>Height(meters):</strong> {{item.heigth}}</p>
+          <p><strong>Width (meters):</strong> {{item.width}}</p>
+          <p><strong>Description:</strong> {{item.description}}</p>
+          <button class="fa fa-pen btnUpdate" (click)="openDialog(item)">Update box</button>
+          <button class="fa fa-trash btnDelete" (click)="deleteBox(item.id)"> Delete box</button>
+        </div>
+      </ng-container>
+    </div>
+</div>
+

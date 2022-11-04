@@ -1,0 +1,98 @@
+<div class="container">
+  <div class=" text-center mt-5 ">
+
+    <h1 >Create a new box here</h1>
+
+
+  </div>
+
+
+  <div class="row ">
+    <div class="col-lg-7 mx-auto">
+      <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+
+          <div class = "container">
+            <form id="contact-form" role="form">
+
+
+
+              <div class="controls">
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="form_boxName">BoxName *</label>
+                      <input [(ngModel)]="boxName" id="form_boxName" type="text" name="boxName" class="form-control" placeholder="Please enter the name of the box *" required="required" data-error="A box name is required.">
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="form_height">Height *</label>
+                      <input [(ngModel)]="heigth" id="form_height" type ="number" name="height" class="form-control" placeholder=1 required="required" data-error="A valid height is required.">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="form_length">Length *</label>
+                      <input [(ngModel)]="length" id="form_length" type="number" name="length" class="form-control" placeholder=1 required="required" data-error="A valid length is required.">
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="form_width">Width *</label>
+                      <input [(ngModel)]="width" id="form_width" type="number" name="width" class="form-control" placeholder=1 required="required" data-error="A valid width is required.">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="form_url">Image-url *</label>
+                      <input [(ngModel)]="imageUrl" id="form_url" type="text" name="url" class="form-control" placeholder="Please enter an url to create an image *" required="required" data-error="An image-url is required.">
+
+                    </div>
+                  </div>
+                  </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="form_description">Description *</label>
+                      <textarea [(ngModel)]="description" id="form_description" type="text" name="description" class="form-control" placeholder="Write a description here." rows="4" required="required" data-error="Please, leave us a description."></textarea
+                      >
+                    </div>
+
+                  </div>
+
+
+                  <div class="col-md-12">
+
+                    <button mat-raised-button (click)="createBox()">Create Box</button>
+                    <button mat-raised-button (click)="close()">Close</button>
+
+                  </div>
+
+                </div>
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- /.8 -->
+
+    </div>
+    <!-- /.row-->
+
+  </div>
+</div>

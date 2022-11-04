@@ -1,0 +1,140 @@
+/*
+.main {
+  background-image: url("https://images.pexels.com/photos/1227511/pexels-photo-1227511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+Eventuelt bruges senere
+ */
+
+
+.item img {
+  width: 64px;
+}
+
+.item {
+  margin: 0px 15px;
+  text-align: center;
+}
+
+.item a:hover {
+  color: blue;
+}
+
+.card {
+  padding: 20px;
+  margin: 50px;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 15px;
+  transition: 0.3s ease-in-out;
+}
+
+.card img:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+.btnUpdate {
+  position: sticky;
+  background-color: rgba(110, 47, 4, 0.96) !important;
+  border: transparent;
+  color: white;
+  font-size: 18px;
+  align-items: center;
+  border: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  height: 30px;
+  justify-content: center;
+  letter-spacing: .4px;
+  line-height: 1;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3px;
+  text-decoration: none;
+  user-select: none;
+  width: 200px;
+}
+
+.btnUpdate:hover {
+  background-color: rgba(92, 40, 9, 0.96) !important;
+}
+
+.btnDelete {
+  position: sticky;
+  margin-top: 10px;
+  background-color: rgba(110, 47, 4, 0.96) !important;
+  border: transparent;
+  color: white;
+  font-size: 18px;
+  align-items: center;
+  border: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  height: 30px;
+  justify-content: center;
+  letter-spacing: .4px;
+  line-height: 1;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3px;
+  text-decoration: none;
+  user-select: none;
+  width: 200px;
+}
+
+.btnDelete:hover {
+  background-color: rgba(92, 40, 9, 0.96) !important;
+}
+
+.BtnDelete:active {
+  background-color: rgb(92, 40, 9) !important;
+}
+
+.fa-pen {
+  word-spacing: 1px;
+}
+
+.btnCreate {
+  position: center;
+  background-color: rgba(110, 47, 4, 0.96) !important;
+  border: transparent;
+  color: white;
+  font-size: 18px;
+  align-items: center;
+  border: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  height: 30px;
+  justify-content: center;
+  letter-spacing: .4px;
+  line-height: 1;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3px;
+  text-decoration: none;
+  user-select: none;
+  width: 200px;
+  margin-right: 375px;
+  alignment: center;
+  margin-top: 10px;
+  margin-left: 500px;
+}
+
+.btnCreate:hover {
+  background-color: rgba(92, 40, 9, 0.96) !important;
+}
