@@ -1,6 +1,6 @@
 # BoxFactory Project 
 
-![image](https://cdn.lomax.dk/images/t_item_max/f_auto/v1477924116/produkter/3763000/papkasse-1lags-190-x-190-x-200.jpg)
+![image](https://cdn.lomax.dk/images/t_item_max/f_auto/v1477924116/produkter/3763000/papkasse-1lags-190-x-190-x-200.jpg | width=100)
 
 
 ## Kort beskrivelse af programmet
