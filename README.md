@@ -14,12 +14,15 @@ Vi har også tilføjet i dette projekt en login funktion, hvor der er anvendt au
 ##  Login informationer til programmet:
 
 Username: PeterDenGlemte
+
 Password: 42
 
 Username: Alex
+
 Password: zyzz
 
 Username: Bent
+
 Password: okay
 
 ## Biblioteker anvendt i projektet
