@@ -44,6 +44,7 @@ public class BoxFactoryController : ControllerBase
         }
     }
 
+    [AllowAnonymous]
     [HttpGet]
     [Route("CreateDB")]
     public void CreateDB()
