@@ -7,8 +7,10 @@
 Dette projekt er den sidste compulsory assignment i faget SDP, før 3. semester eksamen.
 
 Vi er blevet bedt om at lave et program, der har til formål at kunne hjælpe den lokale kassefabrik med at holde styr på alle deres produkter.
-Manageren i denne boksfabrik har af ønsker at kunne have et overblik over alle sine produkter, se de forskellige detajler for hver produkt,oprette en boks,
+
+Manageren i denne boksfabrik har af ønsker at kunne have et overblik over alle sine produkter, se de forskellige detajler for hver produkt, oprette en boks,
 opdatere en kasse og slette en boks.
+
 Vi har også tilføjet i dette projekt en login funktion, hvor der er anvendt authentication. 
 
 ##  Login informationer til programmet:
