@@ -4,67 +4,46 @@
 
 
 ## Kort beskrivelse af programmet
-Dette projekt er et Datamatiker 2. semester projekt, som er blevet fremstillet til SOSU skolen Esbjerg.
+Dette projekt er den sidste compulsory assignment i faget SDP, før 3. semester eksamen.
 
-Vi er blevet bedt om at lave et træningsprogram til de studerende, der skal hjælpe dem med at træne Fælles Sprog 3. Programmet der skal bruges skal blandt andet kunne tildele de studerende en borger, hvorefter de skal kunne nedskrive forskellige oplysninger om borgeren. 
-
-Projektet har tre forskellige brugertyper, som hver har deres funktionalitet i programmet. Disse er Administratoren, som har af ansvar at administrere de forskellige elever og lærere, som eksisterer på de forskellige SOSU skoler.
-
-Læren har til ansvar i programmet at administere de forskellige elever, som er på den specifikke lærers skole. Læreren har også til ansvar at oprette skabeloner til eleverne som disse kan arbejde i, og tildele dem forskellige kopier af disse skabeloner. Disse skabeloner indeholder forskellige informationer om borgerne, som eksempelvis generel info om borgeren, deres fødselsdato, navn og journaler om dennes helbred og funktionstilstand.
-
-Eleverne har til formål i dette program at kunne træne sig selv i at redigere disse forskellige skabeloner af disse fiktive borgere. Dertil har de mulighed for at kigge på deres tidligere indskrevne indtastninger og forbedre sig via deres tidligere fejl.
-
+Vi er blevet bedt om at lave et program, der har til formål at kunne hjælpe den lokale kassefabrik med at holde styr på alle deres produkter.
+Manageren i denne boksfabrik har af ønsker at kunne have et overblik over alle sine produkter, se de forskellige detajler for hver produkt,oprette en boks,
+opdatere en kasse og slette en boks.
+Vi har også tilføjet i dette projekt en login funktion, hvor der er anvendt authentication. 
 
 ##  Login informationer til programmet:
 
+Username: PeterDenGlemte
+Password: 42
 
-Admin:
+Username: Alex
+Password: zyzz
 
-Brugernavn: Kim
-
-Password: 123456
-
-Lærer:
-
-Brugernavn: OleR
-
-Passsword: 123456
-
-Elev:
-
-Brugernavn: FlemmingL
-
-Password: 123456
+Username: Bent
+Password: okay
 
 ## Biblioteker anvendt i projektet
-**Marven: 
-**
 
-org.junit.jupiter:junit-jupiter:5.9.0-M1
+Swashbucks.AspNetCore - ver. 6.2.3
 
-**Indegår i lib mappen 
-**
+AutoMapper - ver. 12
 
-apiguardian-api-1.1.2.jar
+AutoMapper.Extentions.Microsoft.DependencyInjection - ver. 12
 
-junit-jupiter-5.9.0-M1.jar
+BCrypt.Net-Next - ver. 4.0.3
 
-junit-jupiter-api-5.9.0-M1.jar
+FluentValidation - ver. 11.2.2
 
-junit-jupiter-engine-5.9.0-M1.jar
+FluentVaidation.DependencyInjectionExtentions - 11.2.2
 
-junit-jupiter-params-5.9.0-M1.jar
+Microsoft.AspNetCore.Authentication.JwtBearer - ver. 6.0.10
 
-junit-platform-commons-1.9.0-M1.jar
+Microsoft.EntityFrameworkCore.Sqlite - ver. 7.0.0
 
-junit-platform-engine-1.9.0-M1.jar
+Microsoft.Extentions.DependencyInjection - ver. 6.0.1
 
-mssql-jdbc-8.2.0.jre13.jar
+Microsoft.Extentions.Options - ver. 7.0.0
 
-opentest4j-1.2.0.jar
+Microsoft.IdentityModel.Tokens - ver. 6.25.0
 
-## SDK og JDK settings
-
-SDK'en der skal anvendes er SDK default 17 (17 - Sealed types, always strict floating point-semantics), hvori at liberica-17 BellSoft JDK Version 17 også bliver anvendt.
-
-For at køre programmet, skal programmet indstilles til at køre fra Main klassen.
+System.IdentityModel.Tokens.Jwt - ver. 6.25.0
