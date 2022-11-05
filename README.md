@@ -53,6 +53,6 @@ Microsoft.IdentityModel.Tokens - ver. 6.25.0
 
 System.IdentityModel.Tokens.Jwt - ver. 6.25.0
 
-##Installering af frontend biblioteker
+## Installering af frontend biblioteker
 
 npm install i terminalen.
